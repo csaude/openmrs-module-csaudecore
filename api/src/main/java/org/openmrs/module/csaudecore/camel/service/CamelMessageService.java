@@ -26,5 +26,4 @@ public interface CamelMessageService {
 	 * @param responsePayload the payload from the external system
 	 */
 	void consumeAndPersistDispensation(DispensationPayload payload);
-	
 }
