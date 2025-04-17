@@ -1,19 +1,59 @@
 package org.openmrs.module.csaudecore.camel.payload;
 
-import java.io.Serializable;
+import java.util.List;
 
-public class DispensationPayload implements Serializable {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class DispensationPayload {
 	
-	private static final long serialVersionUID = 1L;
+	@JsonProperty("encounterDatetime")
+	public String encounterDatetime;
 	
-	private String prescrptionUUID;
+	@JsonProperty("patient")
+	public String patient;
 	
-	public String getPrescrptionUUID() {
-		return prescrptionUUID;
+	@JsonProperty("encounterType")
+	public String encounterType;
+	
+	@JsonProperty("location")
+	public String location;
+	
+	@JsonProperty("form")
+	public String form;
+	
+	@JsonProperty("encounterProviders")
+	public List<EncounterProvider> encounterProviders;
+	
+	@JsonProperty("obs")
+	public List<Obs> obs;
+	
+	public static class EncounterProvider {
+		
+		@JsonProperty("provider")
+		public String provider;
+		
+		@JsonProperty("encounterRole")
+		public String encounterRole;
 	}
 	
-	public void setPrescrptionUUID(String prescrptionUUID) {
-		this.prescrptionUUID = prescrptionUUID;
+	public static class Obs {
+		
+		@JsonProperty("person")
+		public String person;
+		
+		@JsonProperty("obsDatetime")
+		public String obsDatetime;
+		
+		@JsonProperty("concept")
+		public String concept;
+		
+		@JsonProperty("value")
+		public String value;
+		
+		@JsonProperty("comment")
+		public String comment;
+		
+		@JsonProperty("groupMembers")
+		public List<Obs> groupMembers;
 	}
-	
 }

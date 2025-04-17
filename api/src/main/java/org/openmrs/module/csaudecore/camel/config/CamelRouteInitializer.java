@@ -11,6 +11,8 @@ import org.openmrs.module.csaudecore.camel.payload.DispensationPayload;
 import org.openmrs.module.csaudecore.camel.payload.PrescriptionResponsePayload;
 import org.openmrs.module.csaudecore.camel.service.CamelMessageService;
 import org.openmrs.module.csaudecore.util.CSaudeCoreConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,6 +22,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class CamelRouteInitializer implements InitializingBean {
+	
+	private static final Logger log = LoggerFactory.getLogger(CamelRouteInitializer.class);
 	
 	@Autowired
 	private CamelContext camelContext;
@@ -54,19 +58,17 @@ public class CamelRouteInitializer implements InitializingBean {
 					// TODO: alterar o object para PrescriptionResponsePayload, representa a
 					// resposta da prescricao
 					Object response = mapper.readValue(json, Object.class);
-					System.out.println("payload consumido (Prescription Response): " + response);
+					log.info(String.format("payload consumido (Prescription Response) '%s'", response));
+
 					camelMessageService.processPrescriptionResponse(new PrescriptionResponsePayload());
 				});
 
 				from("jms:queue:dispensation.queue").process(exchange -> {
 					String json = exchange.getIn().getBody(String.class);
 					ObjectMapper mapper = new ObjectMapper();
-
-					// TODO: alterar o object para DispensationPayload, representa a
-					// resposta da prescricao
-					Object response = mapper.readValue(json, Object.class);
-					System.out.println("payload consumido (Dispensation): " + response);
-					camelMessageService.consumeAndPersistDispensation(new DispensationPayload());
+					DispensationPayload response = mapper.readValue(json, DispensationPayload.class);
+					log.info(String.format("payload consumido (Dispensation) '%s'", response));
+					camelMessageService.consumeAndPersistDispensation(response);
 				});
 			}
 		});
