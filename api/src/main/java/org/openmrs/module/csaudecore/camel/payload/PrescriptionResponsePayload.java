@@ -1,10 +1,6 @@
 package org.openmrs.module.csaudecore.camel.payload;
 
-import java.io.Serializable;
-
-public class PrescriptionResponsePayload implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class PrescriptionResponsePayload {
 	
 	private String localPrescriptionUuid;
 	
