@@ -6,11 +6,13 @@ public class PrescriptionPayload {
 	
 	private String patientUuid;
 	
-	private List<String> drugOrderUuids;
+	private String encounterUuid;
 	
-	private String therapeuticRegimenConcept;
+	private String therapeuticRegimen;
 	
-	private Integer duration;
+	private String regimenLine;
+	
+	private List<Formulation> formulations;
 	
 	public String getPatientUuid() {
 		return patientUuid;
@@ -20,27 +22,35 @@ public class PrescriptionPayload {
 		this.patientUuid = patientUuid;
 	}
 	
-	public List<String> getDrugOrderUuids() {
-		return drugOrderUuids;
+	public String getTherapeuticRegimen() {
+		return therapeuticRegimen;
 	}
 	
-	public void setDrugOrderUuids(List<String> drugOrderUuids) {
-		this.drugOrderUuids = drugOrderUuids;
+	public void setTherapeuticRegimen(String therapeuticRegimen) {
+		this.therapeuticRegimen = therapeuticRegimen;
 	}
 	
-	public String getTherapeuticRegimenConcept() {
-		return therapeuticRegimenConcept;
+	public String getEncounterUuid() {
+		return encounterUuid;
 	}
 	
-	public void setTherapeuticRegimenConcept(String therapeuticRegimenConcept) {
-		this.therapeuticRegimenConcept = therapeuticRegimenConcept;
+	public void setEncounterUuid(String encounterUuid) {
+		this.encounterUuid = encounterUuid;
 	}
 	
-	public Integer getDuration() {
-		return duration;
+	public List<Formulation> getFormulations() {
+		return formulations;
 	}
 	
-	public void setDuration(Integer duration) {
-		this.duration = duration;
+	public void setFormulations(List<Formulation> formulations) {
+		this.formulations = formulations;
+	}
+	
+	public String getRegimenLine() {
+		return regimenLine;
+	}
+	
+	public void setRegimenLine(String regimenLine) {
+		this.regimenLine = regimenLine;
 	}
 }
