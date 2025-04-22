@@ -49,6 +49,8 @@ public class CamelRouteInitializer implements InitializingBean {
 			@Override
 			public void configure() throws Exception {
 
+				from("direct:sendPatient").marshal().json().to("jms:queue:patient.sync.queue");
+
 				from("direct:sendPrescription").marshal().json().to("jms:queue:prescription.queue");
 
 				from("jms:queue:prescription.response.queue").process(exchange -> {

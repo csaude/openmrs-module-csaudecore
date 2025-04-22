@@ -1,6 +1,7 @@
 package org.openmrs.module.csaudecore.camel.service;
 
 import org.openmrs.module.csaudecore.camel.payload.DispensationPayload;
+import org.openmrs.module.csaudecore.camel.payload.PatientPayload;
 import org.openmrs.module.csaudecore.camel.payload.PrescriptionPayload;
 import org.openmrs.module.csaudecore.camel.payload.PrescriptionResponsePayload;
 
@@ -12,6 +13,13 @@ public interface CamelMessageService {
 	 * @param payload the prescription payload to be published
 	 */
 	void publishPrescription(PrescriptionPayload payload);
+	
+	/**
+	 * Publishes a new patient with his clinical history message to the message broker.
+	 * 
+	 * @param payload the patientPayload payload to be published
+	 */
+	void publishPatient(PatientPayload payload);
 	
 	/**
 	 * Handles the response to a previously published prescription.
@@ -26,4 +34,5 @@ public interface CamelMessageService {
 	 * @param responsePayload the payload from the external system
 	 */
 	void consumeAndPersistDispensation(DispensationPayload payload);
+	
 }

@@ -4,6 +4,7 @@ import org.apache.camel.ProducerTemplate;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.csaudecore.api.DispensationProcessorService;
 import org.openmrs.module.csaudecore.camel.payload.DispensationPayload;
+import org.openmrs.module.csaudecore.camel.payload.PatientPayload;
 import org.openmrs.module.csaudecore.camel.payload.PrescriptionPayload;
 import org.openmrs.module.csaudecore.camel.payload.PrescriptionResponsePayload;
 import org.openmrs.module.csaudecore.camel.service.CamelMessageService;
@@ -27,7 +28,15 @@ public class CamelMessageServiceImpl implements CamelMessageService {
 	}
 	
 	@Override
+	public void publishPatient(PatientPayload payload) {
+		this.producerTemplate.sendBody("direct:sendPatient", payload);
+	}
+	
+	@Override
 	public void processPrescriptionResponse(PrescriptionResponsePayload payload) {
+		
+		// TODO: Logica Context.openSession(); sera removida apos migracao dos resources
+		// para a camada omod
 		Context.openSession();
 		try {
 			Context.authenticate("admin", "eSaude123");
@@ -42,6 +51,8 @@ public class CamelMessageServiceImpl implements CamelMessageService {
 	
 	@Override
 	public void consumeAndPersistDispensation(DispensationPayload payload) {
+		// TODO: Logica Context.openSession(); sera removida apos migracao dos resources
+		// para a camada omod
 		Context.openSession();
 		try {
 			Context.authenticate("admin", "eSaude123");
@@ -51,4 +62,5 @@ public class CamelMessageServiceImpl implements CamelMessageService {
 			Context.closeSession();
 		}
 	}
+	
 }
