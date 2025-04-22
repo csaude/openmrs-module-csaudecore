@@ -1,229 +1,253 @@
 package org.openmrs.module.csaudecore.camel.payload;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PatientPayload {
 	
-	private String identificador;
+	@JsonProperty("patientUuid")
+	private String patientUuid;
 	
-	@JsonProperty("nome")
-	private String primeiroNome;
+	@JsonProperty("firstName")
+	private String firstName;
 	
-	@JsonProperty("sobrenome")
-	private String sobrenome;
+	@JsonProperty("middleName")
+	private String middleName;
 	
-	@JsonProperty("apelido")
-	private String apelido;
+	@JsonProperty("lastName")
+	private String lastName;
 	
-	@JsonProperty("dataNascimento")
-	private String dataNascimento;
+	@JsonProperty("birthDate")
+	private String birthDate;
 	
-	@JsonProperty("sexo")
-	private String sexo;
+	@JsonProperty("gender")
+	private String gender;
 	
-	@JsonProperty("provincia")
-	private String provincia;
+	@JsonProperty("province")
+	private String province;
 	
-	@JsonProperty("distrito")
-	private String distrito;
+	@JsonProperty("district")
+	private String district;
 	
-	@JsonProperty("postoAdministrativo")
-	private String postoAdministrativo;
+	@JsonProperty("administrativePost")
+	private String administrativePost;
 	
-	@JsonProperty("localidade")
-	private String localidade;
+	@JsonProperty("locality")
+	private String locality;
 	
-	@JsonProperty("morada")
-	private String avenidaRuaCasa;
+	@JsonProperty("address")
+	private String address;
 	
-	@JsonProperty("pontoReferencia")
-	private String pontoReferencia;
+	@JsonProperty("referencePoint")
+	private String referencePoint;
 	
-	@JsonProperty("contacto")
-	private String numeroTelefone1;
+	@JsonProperty("phoneNumber")
+	private String phoneNumber;
 	
-	@JsonProperty("contactoAlternativo")
-	private String numeroTelefone2;
+	@JsonProperty("alternativePhoneNumber")
+	private String alternativePhoneNumber;
 	
-	public String getIdentificador() {
-		return identificador;
+	@JsonProperty("locationUuid")
+	private String locationUuid;
+	
+	@JsonProperty("clinicalHistory")
+	private List<ClinicalHistory> clinicalHistory;
+	
+	public String getPatientUuid() {
+		return patientUuid;
 	}
 	
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
+	public void setPatientUuid(String patientUuid) {
+		this.patientUuid = patientUuid;
 	}
 	
-	public String getPrimeiroNome() {
-		return primeiroNome;
+	public String getFirstName() {
+		return firstName;
 	}
 	
-	public void setPrimeiroNome(String primeiroNome) {
-		this.primeiroNome = primeiroNome;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	
-	public String getSobrenome() {
-		return sobrenome;
+	public String getMiddleName() {
+		return middleName;
 	}
 	
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
 	
-	public String getApelido() {
-		return apelido;
+	public String getLastName() {
+		return lastName;
 	}
 	
-	public void setApelido(String apelido) {
-		this.apelido = apelido;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
-	public String getDataNascimento() {
-		return dataNascimento;
+	public String getBirthDate() {
+		return birthDate;
 	}
 	
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 	
-	public String getSexo() {
-		return sexo;
+	public String getGender() {
+		return gender;
 	}
 	
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
-	public String getProvincia() {
-		return provincia;
+	public String getProvince() {
+		return province;
 	}
 	
-	public void setProvincia(String provincia) {
-		this.provincia = provincia;
+	public void setProvince(String province) {
+		this.province = province;
 	}
 	
-	public String getDistrito() {
-		return distrito;
+	public String getDistrict() {
+		return district;
 	}
 	
-	public void setDistrito(String distrito) {
-		this.distrito = distrito;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 	
-	public String getPostoAdministrativo() {
-		return postoAdministrativo;
+	public String getAdministrativePost() {
+		return administrativePost;
 	}
 	
-	public void setPostoAdministrativo(String postoAdministrativo) {
-		this.postoAdministrativo = postoAdministrativo;
+	public void setAdministrativePost(String administrativePost) {
+		this.administrativePost = administrativePost;
 	}
 	
-	public String getLocalidade() {
-		return localidade;
+	public String getLocality() {
+		return locality;
 	}
 	
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
+	public void setLocality(String locality) {
+		this.locality = locality;
 	}
 	
-	public String getAvenidaRuaCasa() {
-		return avenidaRuaCasa;
+	public String getAddress() {
+		return address;
 	}
 	
-	public void setAvenidaRuaCasa(String avenidaRuaCasa) {
-		this.avenidaRuaCasa = avenidaRuaCasa;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
-	public String getPontoReferencia() {
-		return pontoReferencia;
+	public String getReferencePoint() {
+		return referencePoint;
 	}
 	
-	public void setPontoReferencia(String pontoReferencia) {
-		this.pontoReferencia = pontoReferencia;
+	public void setReferencePoint(String referencePoint) {
+		this.referencePoint = referencePoint;
 	}
 	
-	public String getNumeroTelefone1() {
-		return numeroTelefone1;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 	
-	public void setNumeroTelefone1(String numeroTelefone1) {
-		this.numeroTelefone1 = numeroTelefone1;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
-	public String getNumeroTelefone2() {
-		return numeroTelefone2;
+	public String getAlternativePhoneNumber() {
+		return alternativePhoneNumber;
 	}
 	
-	public void setNumeroTelefone2(String numeroTelefone2) {
-		this.numeroTelefone2 = numeroTelefone2;
+	public void setAlternativePhoneNumber(String alternativePhoneNumber) {
+		this.alternativePhoneNumber = alternativePhoneNumber;
 	}
 	
-	public HistoricoClinico getHistoricoClinico() {
-		return historicoClinico;
+	public String getLocationUuid() {
+		return locationUuid;
 	}
 	
-	public void setHistoricoClinico(HistoricoClinico historicoClinico) {
-		this.historicoClinico = historicoClinico;
+	public void setLocationUuid(String locationUuid) {
+		this.locationUuid = locationUuid;
 	}
 	
-	@JsonProperty("historicoClinico")
-	private HistoricoClinico historicoClinico;
+	public List<ClinicalHistory> getClinicalHistory() {
+		return clinicalHistory;
+	}
 	
-	public static class HistoricoClinico {
+	public void setClinicalHistory(List<ClinicalHistory> clinicalHistory) {
+		this.clinicalHistory = clinicalHistory;
+	}
+	
+	public static class ClinicalHistory {
 		
-		@JsonProperty("servicoSaude")
-		private String nomePrograma;
+		@JsonProperty("serviceCode")
+		private String serviceCode;
 		
-		@JsonProperty("dataAdmissao")
-		private String dataInicio;
+		@JsonProperty("nid")
+		private String nid;
 		
-		@JsonProperty("notasInicio")
-		private String estadoPrograma;
+		@JsonProperty("admissionDate")
+		private String admissionDate;
 		
-		@JsonProperty("sectorClinico")
-		private String sectorClinico;
+		@JsonProperty("programStatus")
+		private String programStatus;
 		
-		@JsonProperty("dataInicio")
-		private String dataActualSistema;
+		@JsonProperty("clinicalSector")
+		private String clinicalSector;
 		
-		public String getNomePrograma() {
-			return nomePrograma;
+		@JsonProperty("systemDate")
+		private String systemDate;
+		
+		public String getServiceCode() {
+			return serviceCode;
 		}
 		
-		public void setNomePrograma(String nomePrograma) {
-			this.nomePrograma = nomePrograma;
+		public void setServiceCode(String serviceCode) {
+			this.serviceCode = serviceCode;
 		}
 		
-		public String getDataInicio() {
-			return dataInicio;
+		public String getNid() {
+			return nid;
 		}
 		
-		public void setDataInicio(String dataInicio) {
-			this.dataInicio = dataInicio;
+		public void setNid(String nid) {
+			this.nid = nid;
 		}
 		
-		public String getEstadoPrograma() {
-			return estadoPrograma;
+		public String getAdmissionDate() {
+			return admissionDate;
 		}
 		
-		public void setEstadoPrograma(String estadoPrograma) {
-			this.estadoPrograma = estadoPrograma;
+		public void setAdmissionDate(String admissionDate) {
+			this.admissionDate = admissionDate;
 		}
 		
-		public String getSectorClinico() {
-			return sectorClinico;
+		public String getProgramStatus() {
+			return programStatus;
 		}
 		
-		public void setSectorClinico(String sectorClinico) {
-			this.sectorClinico = sectorClinico;
+		public void setProgramStatus(String programStatus) {
+			this.programStatus = programStatus;
 		}
 		
-		public String getDataActualSistema() {
-			return dataActualSistema;
+		public String getClinicalSector() {
+			return clinicalSector;
 		}
 		
-		public void setDataActualSistema(String dataActualSistema) {
-			this.dataActualSistema = dataActualSistema;
+		public void setClinicalSector(String clinicalSector) {
+			this.clinicalSector = clinicalSector;
+		}
+		
+		public String getSystemDate() {
+			return systemDate;
+		}
+		
+		public void setSystemDate(String systemDate) {
+			this.systemDate = systemDate;
 		}
 	}
-	
 }
