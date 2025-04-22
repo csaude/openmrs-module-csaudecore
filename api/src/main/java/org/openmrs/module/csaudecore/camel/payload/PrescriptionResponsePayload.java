@@ -2,20 +2,20 @@ package org.openmrs.module.csaudecore.camel.payload;
 
 public class PrescriptionResponsePayload {
 	
-	private String localPrescriptionUuid;
+	private String prescriptionUuid;
 	
 	private String remoteId;
 	
 	private String status; // "SUCCESS", "ERROR", etc.
 	
-	private String message;
+	private String errorMessage;
 	
-	public String getLocalPrescriptionUuid() {
-		return localPrescriptionUuid;
+	public String getPrescriptionUuid() {
+		return prescriptionUuid;
 	}
 	
-	public void setLocalPrescriptionUuid(String localPrescriptionUuid) {
-		this.localPrescriptionUuid = localPrescriptionUuid;
+	public void setPrescriptionUuid(String prescriptionUuid) {
+		this.prescriptionUuid = prescriptionUuid;
 	}
 	
 	public String getRemoteId() {
@@ -34,11 +34,4 @@ public class PrescriptionResponsePayload {
 		this.status = status;
 	}
 	
-	public String getMessage() {
-		return message;
-	}
-	
-	public void setMessage(String message) {
-		this.message = message;
-	}
 }

@@ -4,17 +4,21 @@ public class Formulation {
 	
 	private String orderUuid;
 	
-	private String drugUuid;
+	private String drug;
 	
 	private String drugName;
 	
-	private int quantity;
+	private int prescribedQty;
 	
-	private String quantityUnit;
+	private String form;
 	
 	private int duration;
 	
 	private String durationUnit;
+	
+	private int amtPerTime;
+	
+	private int timesPerDay;
 	
 	public String getOrderUuid() {
 		return orderUuid;
@@ -24,12 +28,12 @@ public class Formulation {
 		this.orderUuid = orderUuid;
 	}
 	
-	public String getDrugUuid() {
-		return drugUuid;
+	public String getDrug() {
+		return drug;
 	}
 	
-	public void setDrugUuid(String drugUuid) {
-		this.drugUuid = drugUuid;
+	public void setDrug(String drug) {
+		this.drug = drug;
 	}
 	
 	public String getDrugName() {
@@ -40,20 +44,20 @@ public class Formulation {
 		this.drugName = drugName;
 	}
 	
-	public int getQuantity() {
-		return quantity;
+	public int getPrescribedQty() {
+		return prescribedQty;
 	}
 	
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setPrescribedQty(int prescribedQty) {
+		this.prescribedQty = prescribedQty;
 	}
 	
-	public String getQuantityUnit() {
-		return quantityUnit;
+	public String getForm() {
+		return form;
 	}
 	
-	public void setQuantityUnit(String quantityUnit) {
-		this.quantityUnit = quantityUnit;
+	public void setForm(String form) {
+		this.form = form;
 	}
 	
 	public int getDuration() {
@@ -70,5 +74,21 @@ public class Formulation {
 	
 	public void setDurationUnit(String durationUnit) {
 		this.durationUnit = durationUnit;
+	}
+	
+	public int getAmtPerTime() {
+		return amtPerTime;
+	}
+	
+	public void setAmtPerTime(int amtPerTime) {
+		this.amtPerTime = amtPerTime;
+	}
+	
+	public int getTimesPerDay() {
+		return timesPerDay;
+	}
+	
+	public void setTimesPerDay(int timesPerDay) {
+		this.timesPerDay = timesPerDay;
 	}
 }
